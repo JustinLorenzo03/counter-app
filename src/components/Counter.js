@@ -20,13 +20,12 @@ export default class Counter extends Component{
             return "Limit Reached";
         } else 
         return "";
-
     }
     decrease = (x) => { //Added for the decrease button
-        return x = x - 1;    
+        return x -= 1;    
         }
     endResult = (x) => { //Added for the decrease button
-        if(x <= 0) {
+        if(x < 0) {
             return "Can't go lower than 0";
         } else 
         return "";
