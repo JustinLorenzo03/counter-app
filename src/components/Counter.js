@@ -18,17 +18,16 @@ export default class Counter extends Component{
     findResult = (x) =>{ //Added wednesday 
         if(x >= 3) {
             return "Limit Reached";
-        } else 
-        return "";
+        } 
     }
     decrease = (x) => { //Added for the decrease button
         return x -= 1;    
         }
     endResult = (x) => { //Added for the decrease button
-        if(x <= 0) {
-            return "Can't go lower than 0";
-        } else 
-        return "";
+        if(x < 0) {
+            return "Can not go below 0";
+        } 
+        
     }    
     HandleClick = () => { //Added for the decrease button
         const currentCount = this.decrease(this.state.count);
@@ -37,12 +36,12 @@ export default class Counter extends Component{
         if(currentCount < 0) {
             this.setState({
                 count: 0,
-                result: ""
+                result: currentResult
             })
         } else 
         this.setState({
             count: currentCount,
-            result: currentResult
+            result: ""
         })
     }
 

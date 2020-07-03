@@ -9,3 +9,11 @@ describe('Testing the Footer function with enzyme', () => {
         expect(text).toHaveLength(1);
     })
 })
+
+describe('Testing the h2 prints right', () => {
+    it('knows what to print', () => {
+        const wrapper = shallow(<Footer />);
+        const text = wrapper.find('h3').text();
+        expect(text).toEqual('Did You Reach Your Limit?');
+    })
+})

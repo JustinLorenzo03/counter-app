@@ -11,6 +11,8 @@ describe('Testing the Counter component with enzyme', () => {
         incrementBtn.simulate('click');
         const text = wrapper.find('h2').text();
         expect(text).toEqual('1');
+         const result = wrapper.find('h2').text();
+        expect(result).toBe('Limit Reached');
     })
 })
 describe('Testing the decrease button', () => {
@@ -20,5 +22,7 @@ describe('Testing the decrease button', () => {
         decreaseBtn.simulate('click');
         const text = wrapper.find('h2').text();
         expect(text).toEqual("0");
+        const result = wrapper.find('h2').text();
+        expect(result).toBe('Can not go below 0');
     })
 })
